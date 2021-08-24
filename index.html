@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tablero para duplicadas</title>
+        <meta charset="UTF-8">
+        <script>
+    			function allowDrop(ev) {
+    				ev.preventDefault();
+    			}
+
+    			function dragStart(ev) {
+    				ev.dataTransfer.setData("text", ev.target.id);
+    			}
+
+    			function dragDrop(ev) {
+    				ev.preventDefault();
+    				var data = ev.dataTransfer.getData("text");
+    				ev.target.appendChild(document.getElementById(data));
+    			}
+    		</script>
+        <style>
+        body{
+          text-align: center;
+        }
+        .container{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+            .chess-board { border-spacing: 0; border-collapse: collapse; }
+            .chess-board th { padding: 0.5em; }
+            .chess-board td {border: 2px solid; width: 2.5em; height: 2.5em;}
+            .doublew { background: #FA8072; }
+            .triplew { background: red;}
+            .doublel { background: #009DFF;}
+            .triplel { background: #2200FF; }
+            .normal { background: green; }
+            .chess-board .tile { border: 1px solid; width:2.5em; height:2.5em; position: relative;left:100px}
+            .chess-board2{ border-spacing: 0; border-collapse: collapse; }
+            .table2 {border-collapse: collapse; // 1  border-spacing: 0;}
+            .section {border-top: 5em solid transparent;}
+
+          </style>
+    </head>
+    <body>
+          <table class="chess-board container" id="casilla" ondrop="dragDrop(event)" ondragover="allowDrop(event)">
+            <tbody>
+              <tr>
+                  <th></th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                  <th>11</th>
+                  <th>12</th>
+                  <th>13</th>
+                  <th>14</th>
+                  <th>15</th>
+              </tr>
+                <tr>
+                    <th>A</th>
+                    <td class="triplew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplew"></td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td class="triplew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"id="casilla1" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplew"></td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="triplel"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>K</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                    <th>L</th>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                </tr>
+                <tr>
+                    <th>M</th>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="doublel"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                    <td class="doublew"></td>
+                    <td class="normal"></td>
+                    <td class="normal"></td>
+                </tr>
+                <tr>
+                  <th>N</th>
+                  <td class="normal"></td>
+                  <td class="doublew"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="triplel"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="triplel"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="doublew"></td>
+                  <td class="normal"></td>
+                </tr>
+                <tr>
+                  <th>O</th>
+                  <td class="triplew"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="doublel"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="triplew"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="doublel"></td>
+                  <td class="normal"></td>
+                  <td class="normal"></td>
+                  <td class="triplew"></td>
+                </tr>
+            </tbody>
+
+            <tbody class="table2 section">
+
+                <tr>
+
+                    <th></th>
+                    <td ><img id="ficha1" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha2" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha3" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha4" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha5" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha6" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha7" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha8" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha9" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha10" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                </tr>
+                <tr>
+                    <th>
+                    <td ><img id="ficha11" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha12" src="images\A_tile.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha14" src="images\b.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha13" src="images\b.png" draggable="true"ondragstart="dragStart(event)" /></td>
+                    <td ><img id="ficha15" src="images\c.png" draggable="true"ondragstart="dragStart(event)"/></td>
+                    <td ><img id="ficha16" src="images\c.png" draggable="true"ondragstart="dragStart(event)"/></td>
+                    <td ><img id="ficha17" src="images\c.png" draggable="true"ondragstart="dragStart(event)"/></td>
+                    <td ><img id="ficha18" src="images\c.png" draggable="true"ondragstart="dragStart(event)"/></td>
+                    <td ><img id="ficha19"draggable="true"ondragstart="dragStart(event)"src="images\ch.png"/></td>
+                    <td ><img id="ficha20"draggable="true"ondragstart="dragStart(event)"src="images\d.png"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha21"draggable="true"ondragstart="dragStart(event)"src="images\d.png"/></td>
+                    <td ><img id="ficha22"draggable="true"ondragstart="dragStart(event)"src="images\d.png"/></td>
+                    <td ><img id="ficha23"draggable="true"ondragstart="dragStart(event)"src="images\d.png"/></td>
+                    <td ><img id="ficha24"draggable="true"ondragstart="dragStart(event)"src="images\d.png"/></td>
+                    <td ><img id="ficha25"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha26"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha27"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha28"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha29"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha30"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha32"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha31"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha33"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha34"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha35"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha36"draggable="true"ondragstart="dragStart(event)"src="images\e.png"/></td>
+                    <td ><img id="ficha37"draggable="true"ondragstart="dragStart(event)"src="images\f.png"/></td>
+                    <td ><img id="ficha38"draggable="true"ondragstart="dragStart(event)"src="images\g.png"/></td>
+                    <td ><img id="ficha39"draggable="true"ondragstart="dragStart(event)"src="images\g.png"/></td>
+                    <td ><img id="ficha40"draggable="true"ondragstart="dragStart(event)"src="images\h.png"/></td>
+
+
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha41"draggable="true"ondragstart="dragStart(event)"src="images\h.png"/></td>
+                    <td ><img id="ficha43"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha42"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha44"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha45"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha46"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha47"draggable="true"ondragstart="dragStart(event)"src="images\i.png"/></td>
+                    <td ><img id="ficha48"draggable="true"ondragstart="dragStart(event)"src="images\j.png"/></td>
+                    <td ><img id="ficha49"draggable="true"ondragstart="dragStart(event)"src="images\l.png"/></td>
+                    <td ><img id="ficha50"draggable="true"ondragstart="dragStart(event)"src="images\l.png"/></td>
+
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha51"draggable="true"ondragstart="dragStart(event)"src="images\l.png"/></td>
+                    <td ><img id="ficha52"draggable="true"ondragstart="dragStart(event)"src="images\l.png"/></td>
+                    <td ><img id="ficha53"draggable="true"ondragstart="dragStart(event)"src="images\ll.png"/></td>
+                    <td ><img id="ficha54"draggable="true"ondragstart="dragStart(event)"src="images\m.png"/></td>
+                    <td ><img id="ficha55"draggable="true"ondragstart="dragStart(event)"src="images\m.png"/></td>
+                    <td ><img id="ficha56"draggable="true"ondragstart="dragStart(event)"src="images\n.png"/></td>
+                    <td ><img id="ficha57"draggable="true"ondragstart="dragStart(event)"src="images\n.png"/></td>
+                    <td ><img id="ficha58"draggable="true"ondragstart="dragStart(event)"src="images\n.png"/></td>
+                    <td ><img id="ficha59"draggable="true"ondragstart="dragStart(event)"src="images\n.png"/></td>
+                    <td ><img id="ficha60"draggable="true"ondragstart="dragStart(event)"src="images\n.png"/></td>
+
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha61"draggable="true"ondragstart="dragStart(event)"src="images\nh.png"/></td>
+                    <td ><img id="ficha62"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha63"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha64"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha65"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha66"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha67"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha68"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha69"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+                    <td ><img id="ficha70"draggable="true"ondragstart="dragStart(event)"src="images\o.png"/></td>
+
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td ><img id="ficha71"draggable="true"ondragstart="dragStart(event)"src="images\p.png"/></td>
+                    <td ><img id="ficha72"draggable="true"ondragstart="dragStart(event)"src="images\p.png"/></td>
+                    <td ><img id="ficha73"draggable="true"ondragstart="dragStart(event)"src="images\q.png"/></td>
+                    <td ><img id="ficha75"draggable="true"ondragstart="dragStart(event)"src="images\r.png"/></td>
+                    <td ><img id="ficha74"draggable="true"ondragstart="dragStart(event)"src="images\r.png"/></td>
+                    <td ><img id="ficha76"draggable="true"ondragstart="dragStart(event)"src="images\r.png"/></td>
+                    <td ><img id="ficha77"draggable="true"ondragstart="dragStart(event)"src="images\r.png"/></td>
+                    <td ><img id="ficha78"draggable="true"ondragstart="dragStart(event)"src="images\r.png"/></td>
+                    <td ><img id="ficha79"draggable="true"ondragstart="dragStart(event)"src="images\rr.png"/></td>
+                    <td ><img id="ficha80"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><img id="ficha81"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+                    <td><img id="ficha82"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+                    <td><img id="ficha83"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+                    <td><img id="ficha84"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+                    <td><img id="ficha85"draggable="true"ondragstart="dragStart(event)"src="images\s.png"/></td>
+                    <td><img id="ficha86"draggable="true"ondragstart="dragStart(event)"src="images\t.png"/></td>
+                    <td><img id="ficha87"draggable="true"ondragstart="dragStart(event)"src="images\t.png"/></td>
+                    <td><img id="ficha88"draggable="true"ondragstart="dragStart(event)"src="images\t.png"/></td>
+                    <td><img id="ficha89"draggable="true"ondragstart="dragStart(event)"src="images\t.png"/></td>
+                    <td><img id="ficha90"draggable="true"ondragstart="dragStart(event)"src="images\u.png"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><img id="ficha92"draggable="true"ondragstart="dragStart(event)"src="images\u.png"/></td>
+                    <td><img id="ficha93"draggable="true"ondragstart="dragStart(event)"src="images\u.png"/></td>
+                    <td><img id="ficha94"draggable="true"ondragstart="dragStart(event)"src="images\u.png"/></td>
+                    <td><img id="ficha91"draggable="true"ondragstart="dragStart(event)"src="images\u.png"/></td>
+                    <td><img id="ficha95"draggable="true"ondragstart="dragStart(event)"src="images\v.png"/></td>
+                    <td><img id="ficha96"draggable="true"ondragstart="dragStart(event)"src="images\x.png"/></td>
+                    <td><img id="ficha97"draggable="true"ondragstart="dragStart(event)"src="images\y.png"/></td>
+                    <td><img id="ficha98"draggable="true"ondragstart="dragStart(event)"src="images\z.png"/></td>
+                    <td><font size="4"color="white"id="ficha99"draggable="true"ondragstart="dragStart(event)"title="Muévelo y escríbelo!"><input type="text"size="1"></font></td>
+                    <td><font size="4"color="white"id="ficha100"draggable="true"ondragstart="dragStart(event)"title="Muévelo y escríbelo!"><input type="text"size="1"></font></td>
+                </tr>
+                <tr>
+                </tr>
+                  <tr>
+                      <th></th>
+
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td title="Este es el Atril"></td>
+                      <td>
+                        👈ATRIL
+                      </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+              </tbody>
+        </table>
+    </body>
+</html>
